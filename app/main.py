@@ -34,6 +34,8 @@ def main():
     # Resize to 1024 by 1024
     fit_image_to_box("../temp_img/test1.png", 1024)
 
+    
+
     # base64_image = encode_image(image)
 
     weather_condition = st.text_input(
@@ -42,7 +44,7 @@ def main():
       result = test1.generate_prompt(weather_condition)
       diffused_image = diffuse_from_text(result, "test1")
       st.write(result)
-      st.image(diffused_image, caption='diffused_image', use_column_width=True)
+      st.image("../temp_img_out/img2img_0.png", caption='diffused_image', use_column_width=True)
 
 
 if __name__ == '__main__':
