@@ -15,6 +15,7 @@ img_data object contains
 
 def diffuse_from_text(weather_prompt, image_name):
 
+    
     engine_id = "stable-diffusion-xl-1024-v1-0"
     api_host = os.getenv("API_HOST", "https://api.stability.ai")
     api_key = os.getenv("STABILITY_API_KEY")
