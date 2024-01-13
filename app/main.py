@@ -19,7 +19,7 @@ def main():
   st.title("Weather Condition Transformer")
   api_key = os.environ['OPENAI_API_KEY']
 
-  uploaded_file = st.file_uploader("Choose an Image...", type="jpg")
+  uploaded_file = st.file_uploader("Choose an Image...", type="png")
   if uploaded_file is not None:
     image = Image.open(uploaded_file)
     st.image(image, caption='Uploaded Image.', use_column_width=True)
@@ -45,6 +45,8 @@ def main():
       diffused_image = diffuse_from_text(result, "test1")
       st.write(result)
       st.image("../temp_img_out/img2img_0.png", caption='diffused_image', use_column_width=True)
+
+      
 
 
 if __name__ == '__main__':
