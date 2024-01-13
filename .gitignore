@@ -1,0 +1,31 @@
+# Environment variables
+.env
+.env.local
+
+# Node modules
+frontend/node_modules
+
+# Build output
+/build
+
+
+# Getting Rid of all the pycache files
+backend/app/__pycache__
+backend/app/utils/__pycache__
+backend/app/tests/__pycache__
+backend/app/services/__pycache__
+backend/app/routers/__pycache__
+backend/app/models/__pycache__
+
+# Python virtual environment
+backend/venv-bitsized
+# Keeping the keys unexposed
+backend/firebase_key-bitsized.json
+
+bitsized_key.pem
+
+# Ignoring log files
+backend/logs
+
+backend/tests/test_results.json
+node_modules
