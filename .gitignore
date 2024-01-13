@@ -10,8 +10,8 @@ frontend/node_modules
 
 
 # Getting Rid of all the pycache files
-backend/app/__pycache__
-backend/app/utils/__pycache__
+app/__pycache__
+app/utils/__pycache__
 backend/app/tests/__pycache__
 backend/app/services/__pycache__
 backend/app/routers/__pycache__
