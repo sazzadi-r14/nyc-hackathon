@@ -13,7 +13,7 @@ img_data object contains
 }
 """
 
-def diffuse_from_text(weather_prompt, image_name):
+def diffuse_from_text(weather_prompt, base64_image):
 
     engine_id = "stable-diffusion-xl-1024-v1-0"
     api_host = os.getenv("API_HOST", "https://api.stability.ai")
@@ -29,7 +29,7 @@ def diffuse_from_text(weather_prompt, image_name):
             "Authorization": f"Bearer {api_key}"
         },
         files={
-            "init_image": open(f"../temp_img/{image_name}.png", "rb")
+            "init_image": base64_image,
         },
         data={
             "image_strength": 0.45,
@@ -47,20 +47,6 @@ def diffuse_from_text(weather_prompt, image_name):
     data = response.json()
 
     for i, image in enumerate(data["artifacts"]):
-        with open(f"../temp_img_out/img2img_{i}.png", "wb") as f:
+        with open(f"temp_img_out/img2img_{i}.png", "wb") as f:
             f.write(base64.b64decode(image["base64"]))
-
-
-img_data = {
-            "weather_prompt": """
-            create a exact new image of from the give one, 
-            except make it snowy. Do not change anything, just change 
-            the weather condition, and make it snowy.
-            Do not remove any of the people or objects, only add weather
-            """,
-
-            "image_name": "test3"
-            }
-
-diffuse_from_text(img_data["weather_prompt"], img_data["image_name"])
 

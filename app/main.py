@@ -4,6 +4,7 @@ import base64
 import requests
 import os
 from utils.llm import *
+from utils.diffusion import *
 
 test1 = test1()
 
@@ -29,7 +30,9 @@ def main():
         "What weather condition do you want to see in the image?")
     if st.button("Transform"):
       result = test1.generate_prompt(weather_condition)
+      diffused_image = diffuse_from_text(result, base64_image)
       st.write(result)
+      st.image(diffused_image, caption='diffused_image', use_column_width=True)
 
 
 if __name__ == '__main__':
