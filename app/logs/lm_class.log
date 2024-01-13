@@ -136,3 +136,14 @@
 2024-01-13 17:04:39,696:INFO:Backing off generate_prompt(...) for 82.8s (ValueError: Invalid format specifier '"(same_in_all_quote)+(Prompt goes here)"
 ' for object of type 'str')
 2024-01-13 17:04:39,696:WARNING:Backing off 82.8 seconds after 8 tries calling function <function test1.generate_prompt at 0x14abccd60> with args (<utils.llm.test1 object at 0x14aceded0>, 'snow') and kwargs {}
+2024-01-13 18:44:26,770:ERROR:Exception in callback _HandlerDelegate.execute.<locals>.<lambda>(<Task cancell...\web.py:1742>>) at C:\Users\shiva\OneDrive\Documents\GitHub\Projects\FINAL\nyc-hackathon\venv\Lib\site-packages\tornado\web.py:2434
+handle: <Handle _HandlerDelegate.execute.<locals>.<lambda>(<Task cancell...\web.py:1742>>) at C:\Users\shiva\OneDrive\Documents\GitHub\Projects\FINAL\nyc-hackathon\venv\Lib\site-packages\tornado\web.py:2434>
+Traceback (most recent call last):
+  File "C:\Python311\Lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\shiva\OneDrive\Documents\GitHub\Projects\FINAL\nyc-hackathon\venv\Lib\site-packages\tornado\web.py", line 2434, in <lambda>
+    fut.add_done_callback(lambda f: f.result())
+                                    ^^^^^^^^^^
+  File "C:\Users\shiva\OneDrive\Documents\GitHub\Projects\FINAL\nyc-hackathon\venv\Lib\site-packages\tornado\web.py", line 1742, in _execute
+    async def _execute(
+asyncio.exceptions.CancelledError

@@ -44,9 +44,19 @@ def main():
       result = test1.generate_prompt(weather_condition)
       diffused_image = diffuse_from_text(result, "test1")
       st.write(result)
+      print(type(list(result)))
       st.image("../temp_img_out/img2img_0.png", caption='diffused_image', use_column_width=True)
 
-      
+    row1, row2, row3 = st.columns(3)
+
+    with row1:
+        st.info("Object Detection Original")
+
+    with row2:
+        st.info("Object Detection Adverse Conditions")
+
+    with row3:
+        st.info("Object Detection Augmented Image")
 
 
 if __name__ == '__main__':
