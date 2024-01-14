@@ -64,14 +64,14 @@ class test1(LLMPromptGeneration):
             },
             {
                 "role": "user",
-                "content": f"""user's prompt: {user_prompt}
-return each of the prompts generated as a string value in a python dictionary 
-return code in python list format.
+                "content": f"""user_prompt = {user_prompt}
+"same_in_all" = You have to create an image based off of this image where you change the weather condition of the originla image. Under no condition should you eliminate any objects, people, cars, from the scene. Photorealistic, not at all like a cartoon, should look like real world. It is absolutely essential that the genereated image has the same point of view as the original one.
 
-example: [same_in_all + (user prompted weather condition)]
+Give me a prompt for stable diffusion model in this format:(Return just the prompt)
 
-where "same_in_all" quote is:
-You have to create an image based off of this image where you change the weather condition of the originla image. Under no condition should you eliminate any objects, people, cars, from the scene. Photorealistic, not at all like a cartoon, should look like real world. It is absolutely essential that the genereated image has the same point of view as the original one. The weather condition is:
+User_prompt_enhanced + same_in_all
+
+
 """,
             },
         ]
